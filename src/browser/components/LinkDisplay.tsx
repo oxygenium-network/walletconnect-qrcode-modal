@@ -1,6 +1,6 @@
 import * as React from "react";
 import { IMobileRegistryEntry, IQRCodeModalOptions } from "@walletconnect/types";
-import { isAndroid, formatIOSMobile, saveMobileLinkInfo } from "@walletconnect/browser-utils";
+import { isAndroid, formatIOSMobile } from "@walletconnect/browser-utils";
 
 import { DEFAULT_BUTTON_COLOR, WALLETCONNECT_CTA_TEXT_ID } from "../constants";
 
@@ -80,11 +80,7 @@ function LinkDisplay(props: LinkDisplayProps) {
               const { color, name, shortName, logo } = entry;
               const href = formatIOSMobile(props.uri, entry);
               const handleClickIOS = React.useCallback(() => {
-                saveMobileLinkInfo({
-                  name,
-                  href,
-                });
-              }, [pageLinks]);
+              }, []);
               return !grid ? (
                 <WalletButton
                   color={color}
@@ -120,10 +116,6 @@ function LinkDisplay(props: LinkDisplayProps) {
             color={DEFAULT_BUTTON_COLOR}
             href={props.uri}
             onClick={React.useCallback(() => {
-              saveMobileLinkInfo({
-                name: "Unknown",
-                href: props.uri,
-              });
             }, [])}
           />
         )}

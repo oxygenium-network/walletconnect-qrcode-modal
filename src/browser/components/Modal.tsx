@@ -9,7 +9,6 @@ import {
   isMobile,
   isAndroid,
   formatIOSMobile,
-  saveMobileLinkInfo,
   getMobileLinkRegistry,
   getWalletRegistryUrl,
   formatMobileRegistry,
@@ -107,7 +106,6 @@ function Modal(props: ModalProps) {
         {hasSingleLink && displayQRCode ? (
           <div className="walletconnect-modal__single_wallet">
             <a
-              onClick={() => saveMobileLinkInfo({ name: links[0].name, href: singleLinkHref })}
               href={singleLinkHref}
               rel="noopener noreferrer"
               target="_blank"
