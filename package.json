@@ -1,5 +1,5 @@
 {
-  "name": "@oxygenium-network/walletconnect-qrcode-modal",
+  "name": "@oxygenium/walletconnect-qrcode-modal",
   "version": "0.1.0",
   "description": "QR Code Modal for WalletConnect",
   "scripts": {
